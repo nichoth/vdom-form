@@ -24,6 +24,11 @@ function Form(opts) {
 }
 
 
+Form.getData = function(state) {
+  throw new Error('need to implement');
+};
+
+
 // is valid if all inputs have a value. Need to change this
 Form.isValid = function(state) {
   var fs = state.formFields();
