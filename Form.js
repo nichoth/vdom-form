@@ -12,7 +12,8 @@ function Form(opts) {
 
   var fields = oArray(opts.fields.map(function(f) {
     return FormField({
-      field: f
+      field: f.field,
+      value: f.value
     });
   }));
 
@@ -22,11 +23,6 @@ function Form(opts) {
 
   return s;
 }
-
-
-Form.getData = function(state) {
-  throw new Error('need to implement');
-};
 
 
 // is valid if all inputs have a value. Need to change this
