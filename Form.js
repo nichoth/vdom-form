@@ -25,6 +25,17 @@ function Form(opts) {
 }
 
 
+Form.set = function(state, opts) {
+  state.formFields.set(opts.fields.map(function(f) {
+    return FormField({field: f.field, value: f.value});
+  }));
+  // state.formFields.forEach(function(fieldState, i) {
+  //   FormField.set(fieldState, opts.fields[i]);
+  // });
+  // console.log(state());
+};
+
+
 // is valid if all inputs have a value. Need to change this
 Form.isValid = function(state) {
   var fs = state.formFields();
