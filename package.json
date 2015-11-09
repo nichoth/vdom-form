@@ -35,7 +35,7 @@
   "dependencies": {
     "@nichoth/state": "0.0.2",
     "observ-array": "^3.2.1",
-    "vdom-form-field": "0.0.5",
+    "vdom-form-field": "0.0.6",
     "virtual-dom": "^2.1.1"
   }
 }
