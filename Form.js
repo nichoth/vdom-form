@@ -1,6 +1,8 @@
 var h = require('virtual-dom/h');
 var state = require('@nichoth/state');
 var oArray = require('observ-array');
+var struct = require('observ-struct');
+var value = require('observ');
 
 module.exports = Form;
 
@@ -9,7 +11,7 @@ function Form(opts) {
   opts = opts || {};
   opts.fields = opts.fields || [];
 
-  var fields = oArray( map(opts.fields, function(component) {
+  var fields = oArray( opts.fields.map(function(component) {
     return struct({
       state: component(),
       component: value(component)
@@ -20,8 +22,8 @@ function Form(opts) {
     fields: fields,
     isValid: value(opts.isValid || false),
     handles: {
-      onChange: onChange,
-      submit: submitHandler.bind(null, action)
+      // onChange: onChange,
+      // submit: submitHandler.bind(null, action)
     }
   });
 
@@ -36,7 +38,7 @@ Form.isValid = function(data) {
 };
 
 
-Form.values = function(elmts) {
+Form.values = function(data) {
   return data.fields.reduce(function(acc, f, i) {
     var v = f.component.value(f.state);
     acc[v.name] = v.value;
@@ -46,6 +48,8 @@ Form.values = function(elmts) {
 
 
 Form.render = function(state) {
+
+  console.log(arguments);
 
   var fieldEls = state.fields.map(function(f) {
     return f.component.render(f.state);

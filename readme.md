@@ -3,19 +3,13 @@
 Form component for mercury / virtual-dom
 
 
-## todo
-
-* different types of fields
-* validation functions
-
-
 ## install
 
     $ npm install vdom-form
 
 
 ## example
-    
+
 ```js
 var vdom = require('virtual-dom');
 var h = vdom.h;
