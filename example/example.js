@@ -2,14 +2,15 @@ var vdom = require('virtual-dom');
 var h = vdom.h;
 var Form = require('../Form.js');
 
-var UploadField = require('vdom-components/FileUpload.js');
-var Field = require('vdom-form-field');
+var UploadField = require('../lib/FileUpload.js');
+var Field = require('../lib/FormField.js');
 
 function curry(component, args) {
   var c = component.bind(null, args);
   Object.keys(component).forEach(function(fn) {
     c[fn] = component[fn];
   });
+  c.render = c.render.bind(null, h);
   return c;
 }
 
@@ -38,7 +39,7 @@ function render(state) {
   return h('form.my-form', {
     onsubmit: onSubmit
   }, [
-    Form.render(state),
+    Form.render(h, state),
     h('button', {
       type: 'submit',
       disabled: !Form.isValid(state)

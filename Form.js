@@ -1,4 +1,3 @@
-var h = require('virtual-dom/h');
 var state = require('@nichoth/state');
 var oArray = require('observ-array');
 var struct = require('observ-struct');
@@ -47,7 +46,7 @@ Form.values = function(data) {
 };
 
 
-Form.render = function(state) {
+Form.render = function(h, state) {
 
   console.log(arguments);
 
