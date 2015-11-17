@@ -2,7 +2,7 @@
   "name": "vdom-form",
   "description": "Form component for mercury / virtual-dom",
   "main": "Form.js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "keywords": [
     "virtual-dom",
     "mercury",
