@@ -29,8 +29,6 @@ var state = Form({
   ],
 });
 
-// console.log( Form.values(state) );
-
 var loop = require('main-loop')( state(), render, vdom );
 state(loop.update);
 document.getElementById('content').appendChild(loop.target);
