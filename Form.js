@@ -20,7 +20,7 @@ function Form(opts) {
 
   var s = state({
     fields: fields,
-    isValid: value(opts.isValid || false),
+    isValid: value(true),
     handles: {
       // onChange: onChange,
       // submit: submitHandler.bind(null, action)

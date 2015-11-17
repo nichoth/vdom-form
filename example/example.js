@@ -17,7 +17,10 @@ var state = Form({
   fields: [
     curry(Field, {
       field: 'example',
-      value: 'default value'
+      value: 'default value',
+      isValid: function(value) {
+        return value.length > 5;
+      }
     }),
     curry(UploadField, {
       label: 'upload a file'
@@ -27,6 +30,24 @@ var state = Form({
 
 // console.log( Form.values(state) );
 
-var loop = require('main-loop')( state(), Form.render, vdom );
+var loop = require('main-loop')( state(), render, vdom );
 state(loop.update);
 document.getElementById('content').appendChild(loop.target);
+
+function render(state) {
+  return h('form.my-form', {
+    onsubmit: onSubmit
+  }, [
+    Form.render(state),
+    h('button', {
+      type: 'submit',
+      disabled: !Form.isValid(state)
+    }, ['Save'])
+  ]);
+}
+
+function onSubmit(ev) {
+  ev.preventDefault();
+  console.log('submit event');
+  console.log(ev.target.elements);
+}
