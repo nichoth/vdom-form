@@ -1,6 +1,6 @@
 # vdom form
 
-Form component for mercury / virtual-dom
+State machine for form components using a virtual dom.
 
 
 ## install
@@ -18,6 +18,7 @@ var Form = require('../Form.js');
 var UploadField = require('../lib/FileUpload.js');
 var Field = require('../lib/FormField.js');
 
+// bind arguments to child components
 function curry(component, args) {
   var c = component.bind(null, args);
   Object.keys(component).forEach(function(fn) {
