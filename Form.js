@@ -38,17 +38,16 @@ Form.isValid = function(data) {
 
 
 Form.values = function(data) {
-  return data.fields.reduce(function(acc, f, i) {
+  var d = data.fields.reduce(function(acc, f, i) {
     var v = f.component.value(f.state);
     acc[v.name] = v.value;
     return acc;
   }, {});
+  return d;
 };
 
 
 Form.render = function(h, state) {
-
-  console.log(arguments);
 
   var fieldEls = state.fields.map(function(f) {
     return f.component.render(f.state);

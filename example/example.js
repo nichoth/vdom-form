@@ -1,7 +1,7 @@
 var vdom = require('virtual-dom');
 var h = vdom.h;
-var Form = require('../Form.js');
 
+var Form = require('../Form.js');
 var UploadField = require('../lib/FileUpload.js');
 var Field = require('../lib/FormField.js');
 
@@ -24,7 +24,14 @@ var state = Form({
       }
     }),
     curry(UploadField, {
-      label: 'upload a file'
+      label: 'upload a file',
+      isValid: function(files) {
+        var v = files.length && files[0].type === 'text/html';
+        return v;
+      },
+      onChange: function(files) {
+        console.log('file changed', files);
+      }
     })
   ],
 });
@@ -35,7 +42,7 @@ document.getElementById('content').appendChild(loop.target);
 
 function render(state) {
   return h('form.my-form', {
-    onsubmit: onSubmit
+    onsubmit: onSubmit.bind(null, state)
   }, [
     Form.render(h, state),
     h('button', {
@@ -45,8 +52,8 @@ function render(state) {
   ]);
 }
 
-function onSubmit(ev) {
+function onSubmit(data, ev) {
   ev.preventDefault();
   console.log('submit event');
-  console.log(ev.target.elements);
+  console.log( Form.values(data) );
 }
