@@ -24,7 +24,7 @@ var state = Form({
       }
     }),
     curry(UploadField, {
-      label: 'upload a file',
+      field: 'upload a file',
       isValid: function(files) {
         var v = files.length && files[0].type === 'text/html';
         return v;
