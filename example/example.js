@@ -4,6 +4,7 @@ var h = vdom.h;
 var Form = require('../Form.js');
 var UploadField = require('../lib/FileUpload.js');
 var Field = require('../lib/FormField.js');
+var ImageUpload = require('../lib/ImageUpload.js');
 
 function curry(component, args) {
   var c = component.bind(null, args);
@@ -32,6 +33,9 @@ var state = Form({
       onChange: function(files) {
         console.log('file changed', files);
       }
+    }),
+    curry(ImageUpload, {
+      field: 'upload an image'
     })
   ],
 });
