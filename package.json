@@ -42,11 +42,12 @@
   "dependencies": {
     "@nichoth/keycodes": "0.0.3",
     "@nichoth/state": "0.0.2",
+    "component-file": "^0.1.1",
     "lodash.toarray": "^3.0.2",
     "observ": "^0.2.0",
     "observ-array": "^3.2.1",
     "observ-struct": "^6.0.0",
-    "xtend": "^4.0.1",
-    "virtual-dom": "^2.1.1"
+    "virtual-dom": "^2.1.1",
+    "xtend": "^4.0.1"
   }
 }
