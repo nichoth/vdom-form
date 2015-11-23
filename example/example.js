@@ -27,7 +27,7 @@ var state = Form({
     curry(UploadField, {
       field: 'upload a file',
       isValid: function(files) {
-        var v = files.length && files[0].type === 'text/html';
+        var v = files.length > 0;
         return v;
       },
       onChange: function(files) {
@@ -45,6 +45,7 @@ state(loop.update);
 document.getElementById('content').appendChild(loop.target);
 
 function render(state) {
+
   return h('form.my-form', {
     onsubmit: onSubmit.bind(null, state)
   }, [
