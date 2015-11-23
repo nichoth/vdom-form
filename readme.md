@@ -17,6 +17,7 @@ var h = vdom.h;
 var Form = require('../Form.js');
 var UploadField = require('../lib/FileUpload.js');
 var Field = require('../lib/FormField.js');
+var ImageUpload = require('../lib/ImageUpload.js');
 
 function curry(component, args) {
   var c = component.bind(null, args);
@@ -39,12 +40,15 @@ var state = Form({
     curry(UploadField, {
       field: 'upload a file',
       isValid: function(files) {
-        var v = files.length && files[0].type === 'text/html';
+        var v = files.length > 0;
         return v;
       },
       onChange: function(files) {
         console.log('file changed', files);
       }
+    }),
+    curry(ImageUpload, {
+      field: 'upload an image'
     })
   ],
 });
@@ -54,6 +58,7 @@ state(loop.update);
 document.getElementById('content').appendChild(loop.target);
 
 function render(state) {
+
   return h('form.my-form', {
     onsubmit: onSubmit.bind(null, state)
   }, [
