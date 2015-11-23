@@ -10,6 +10,8 @@ State machine for form components using a virtual dom.
 
 ## example
 
+[Demo](https://d1373243a46c54c5f34da83c284557090d46aebf.htmlb.in)
+
 ```js
 var vdom = require('virtual-dom');
 var h = vdom.h;
