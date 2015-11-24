@@ -16,6 +16,7 @@
     "transform": []
   },
   "scripts": {
+    "pp": "npm version patch && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify -d example/example.js > example/bundle.js",
     "make-readme": "cat example/example.js | readme-example _readme.md > readme.md",
