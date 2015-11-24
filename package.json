@@ -2,7 +2,7 @@
   "name": "vdom-form",
   "description": "State machine for form components using a virtual dom",
   "main": "Form.js",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "keywords": [
     "virtual-dom",
     "mercury",
