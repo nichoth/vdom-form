@@ -3,7 +3,8 @@ var forEach = require('lodash.foreach');
 var inputs = {
   formField: require('../lib/FormField.js'),
   fileUpload: require('../lib/FileUpload.js'),
-  imageUpload: require('../lib/ImageUpload.js')
+  imageUpload: require('../lib/ImageUpload.js'),
+  kvInput: require('../lib/KVInput.js')
 };
 
 forEach(inputs, function(component, k) {
