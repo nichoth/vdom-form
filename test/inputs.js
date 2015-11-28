@@ -10,16 +10,26 @@ var inputs = {
 forEach(inputs, function(component, k) {
   test(k + ' implements the methods', function (t) {
 
-    t.plan(3);
+    t.plan(6);
 
     var methods = {
-      value: function(){},
-      hasValue: function(){},
-      isValid: function(){}
+      value: function(){
+        return {};
+      },
+      hasValue: function(){
+        return true;
+      },
+      isValid: function(){
+        return true;
+      }
     };
 
     forEach(methods, function(fn, fnName) {
+      var data = component()();
       t.equal(typeof component[fnName], typeof fn, fnName);
+      t.equal(typeof component[fnName](data), typeof fn(),
+        fnName + ' returns the right type')
+      ;
     });
 
   });
