@@ -16,11 +16,12 @@
     "transform": []
   },
   "scripts": {
-    "pp": "npm version patch && npm publish",
     "test": "faucet test/*",
     "build": "browserify -d example/example.js > example/bundle.js",
     "make-readme": "cat example/example.js | readme-example _readme.md > readme.md",
     "watch": "watchify example/example.js -o example/bundle.js -dv",
+    "build-sass": "node-sass style/main.scss > example/style.css",
+    "watch-sass": "node-sass --watch style/main.scss example/style.css",
     "dev": "npm run watch & npm run server",
     "preversion": "npm run make-readme && git add .",
     "postversion": "git push && git push --tags",
@@ -39,6 +40,7 @@
     "faucet": "0.0.1",
     "lodash.foreach": "^3.0.3",
     "main-loop": "^3.2.0",
+    "node-sass": "^3.4.2",
     "readme-example": "0.0.3",
     "tape": "^4.2.2",
     "virtual-dom": "^2.1.1"

@@ -1,0 +1,48 @@
+.vdom-form {
+  background-color: whitesmoke;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.vdom-image-upload {
+  input[type="file"] {
+    font-size: 1em;
+    border-bottom: none;
+  }
+  img {
+    max-height: 100px;
+  }
+}
+
+.vdom-form-field, .vdom-image-upload, .vdom-file-upload {
+  & .vdom-file-upload {
+    padding: 0;
+    margin-bottom: 0;
+  }
+  padding: 1em;
+  background-color: whitesmoke;
+  margin-bottom: 1em;
+  label, input {
+    display: inline-block;
+    // width: 48%;
+    font-size: 1.5em;
+  }
+  label {
+    letter-spacing: 0.03em;
+    font-weight: 100;
+    vertical-align: bottom;
+    width: 25%;
+  }
+  input {
+    width: 74%;
+    color: gray;
+    transition: all 250ms;
+    background-color: whitesmoke;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    &:focus {
+      border-bottom: 1px solid rgb(0, 188, 212);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.vdom-form {
+  background-color: whitesmoke;
+  margin-bottom: 1em;
+  padding: 1em; }
+
+.vdom-image-upload input[type="file"] {
+  font-size: 1em;
+  border-bottom: none; }
+
+.vdom-image-upload img {
+  max-height: 100px; }
+
+.vdom-form-field, .vdom-image-upload, .vdom-file-upload {
+  padding: 1em;
+  background-color: whitesmoke;
+  margin-bottom: 1em; }
+  .vdom-form-field .vdom-file-upload, .vdom-image-upload .vdom-file-upload, .vdom-file-upload .vdom-file-upload {
+    padding: 0;
+    margin-bottom: 0; }
+  .vdom-form-field label, .vdom-form-field input, .vdom-image-upload label, .vdom-image-upload input, .vdom-file-upload label, .vdom-file-upload input {
+    display: inline-block;
+    font-size: 1.5em; }
+  .vdom-form-field label, .vdom-image-upload label, .vdom-file-upload label {
+    letter-spacing: 0.03em;
+    font-weight: 100;
+    vertical-align: bottom;
+    width: 25%; }
+  .vdom-form-field input, .vdom-image-upload input, .vdom-file-upload input {
+    width: 74%;
+    color: gray;
+    transition: all 250ms;
+    background-color: whitesmoke;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgray; }
+    .vdom-form-field input:focus, .vdom-image-upload input:focus, .vdom-file-upload input:focus {
+      border-bottom: 1px solid #00bcd4; }
+
