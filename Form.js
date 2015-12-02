@@ -50,7 +50,7 @@ Form.values = function(data) {
 Form.render = function(h, state) {
 
   var fieldEls = state.fields.map(function(f) {
-    return f.component.render(f.state);
+    return f.component.render(h, f.state);
   });
 
   return h('div.vdom-form', [
