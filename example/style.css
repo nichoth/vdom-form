@@ -27,7 +27,6 @@
     width: 25%; }
   .vdom-form-field input, .vdom-image-upload input, .vdom-file-upload input {
     width: 74%;
-    color: gray;
     transition: all 250ms;
     background-color: whitesmoke;
     outline: none;
@@ -35,4 +34,3 @@
     border-bottom: 1px solid lightgray; }
     .vdom-form-field input:focus, .vdom-image-upload input:focus, .vdom-file-upload input:focus {
       border-bottom: 1px solid #00bcd4; }
-

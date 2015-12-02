@@ -22,7 +22,7 @@
     "watch": "watchify example/example.js -o example/bundle.js -dv",
     "build-sass": "node-sass style/main.scss > example/style.css",
     "watch-sass": "node-sass --watch style/main.scss example/style.css",
-    "dev": "npm run watch & npm run server",
+    "dev": "npm run watch & npm run watch-sass & npm run server",
     "preversion": "npm run make-readme && git add .",
     "postversion": "git push && git push --tags",
     "server": "node server.js",
